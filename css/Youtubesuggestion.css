@@ -1,0 +1,198 @@
+.suggestions-column{
+    width:402px;
+    /* ADVANCED: Prevents the column from shrinking, maintaining its desktop width */
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+/*---Suggestion Chips Slider---*/
+.suggestion-chips{
+    display:flex;
+    gap:12px;
+    padding:0 0 12px 0;
+    /* ADVANCED: Enables horizontal scrolling for the chip list */
+    overflow-x:auto;
+    /* ADVANCED: Hide scrollbar for Firefox compatibility */
+    scrollbar-width:none;
+    /* ADVANCED: Sticky positioning relative to the main container, offset by 56px (nav height) */
+    position:sticky;
+    top:56px;
+    background:#fff;
+    z-index:100;
+    margin-bottom:12px;
+}
+/* ADVANCED: Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.suggestion-chips::-webkit-scrollbar{
+    display:none;
+}
+.chip{
+    padding:0 12px;
+    height:32px;
+    border:none;
+    border-radius:8px;
+    background-color:#0000000d;
+    color:#0f0f0f;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+    /* ADVANCED: Ensures chips don't wrap and enables horizontal scroll */
+    white-space:nowrap;
+    flex-shrink:0;
+}
+.chip.active{
+    background-color:#0f0f0f;
+    color:#fff;
+}
+.chip:hover{
+    background-color:#0000001a;
+}
+/*---Shorts Section---*/
+.shorts-section{
+    padding-top:24px;
+    margin-top:12px;
+    margin-bottom:24px;
+}
+.shorts-header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:24px;
+}
+.shorts-logo{
+    width:24px;
+    height:24px;
+    object-fit:contain;
+}
+.shorts-header h3{
+    font-size:20px;
+    font-weight:700;
+    color:#0f0f0f;
+}
+.shorts-container{
+    /* ADVANCED: Three-column layout for the shorts shelf */
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px 8px;
+}
+.short-card{
+    width:100%;
+    position:relative;
+}
+.short-card a{
+    display:block;
+}
+.short-thumbnail{
+    width:100%;
+    /* ADVANCED: Sets the vertical 9:16 aspect ratio for shorts */
+    aspect-ratio:9/16;
+    object-fit:cover;
+    border-radius:12px;
+}
+.short-details{
+    padding:12px 0 0 0;
+}
+.short-title{
+    font-size:14px;
+    font-weight:500;
+    line-height:20px;
+    /* ADVANCED: Line clamping limits text to 2 lines and adds ellipsis for overflow */
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-right:24px;
+    color:#0f0f0f;
+}
+.short-views{
+    font-size:12px;
+    color:#606060;
+    margin-top:4px;
+    display:block;
+}
+/*---Suggestion Card Styling---*/
+.suggestion-card{
+    display:flex;
+    gap:8px;
+    cursor:pointer;
+    margin-bottom:8px;
+}
+.suggestion-thumbnail-container{
+    position:relative;
+    flex-shrink:0;
+    width:168px;
+    height:94px;
+}
+.suggestion-thumbnail{
+    width:100%;
+    height:100%;
+    border-radius:8px;
+    object-fit:cover;
+}
+.video-time{
+    position:absolute;
+    bottom:4px;
+    right:4px;
+    background-color:rgba(0,0,0,0.8);
+    color:white;
+    font-size:12px;
+    font-weight:500;
+    padding:1px 4px;
+    border-radius:4px;
+}
+.suggestion-details{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+    min-width:0;
+    margin-right:24px;
+    position:relative;
+}
+.suggestion-title{
+    font-size:14px;
+    font-weight:500;
+    line-height:20px;
+    color:#0f0f0f;
+    /* ADVANCED: Line clamping limits text to 2 lines and adds ellipsis for overflow */
+    display:-webkit-box;
+    -webkit-line-clamp:2;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin-bottom:4px;
+}
+.suggestion-channel,.suggestion-meta{
+    font-size:12px;
+    color:#606060;
+    display:block;
+    line-height:18px;
+}
+.suggestion-channel i{
+    font-size:10px;
+    margin-left:2px;
+}
+.badge-new{
+    background-color:#0000000d;
+    color:#606060;
+    font-size:12px;
+    font-weight:500;
+    padding:0 4px;
+    border-radius:2px;
+    margin-top:4px;
+    width:fit-content;
+}
+.btn-menu{
+    font-size:20px;
+    padding:0;
+    width:24px;
+    height:24px;
+    color:#0f0f0f;
+    flex-shrink:0;
+    /* ADVANCED: Initially hides the three-dot menu button */
+    opacity:0;
+}
+/* ADVANCED: Reveals the menu button when the parent card is hovered */
+.suggestion-card:hover .btn-menu{
+    opacity:1;
+}

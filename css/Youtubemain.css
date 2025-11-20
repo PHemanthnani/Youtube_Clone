@@ -1,0 +1,522 @@
+/*---Main Content Layout---*/
+.main-container{
+    display:flex;
+    gap:24px;
+    padding:24px 24px 0 24px;
+    /* ADVANCED: Centers the content and limits total width */
+    max-width:1750px;
+    margin:0 auto;
+}
+.video-column{
+    /* ADVANCED: Allows column to grow but prevents shrinking below 640px */
+    flex:1;
+    min-width:640px;
+}
+/*---Video Player Styling---*/
+.video-player{
+    width:100%;
+    /* ADVANCED: Essential for responsive video sizing (16:9 ratio) */
+    aspect-ratio:16/9;
+    background-color:#000;
+    border-radius:12px;
+    overflow:hidden;
+}
+.video-player iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+.video-title{
+    font-size:20px;
+    font-weight:700;
+    margin-top:12px;
+    color:#0f0f0f;
+    line-height:28px;
+}
+/*---Video Actions Row Styling---*/
+.video-actions-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:12px;
+}
+/*---Left Group (Channel Info)---*/
+.channel-group{
+    display:flex;
+    align-items:center;
+}
+.channel-avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    margin-right:12px;
+}
+.channel-name{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+    margin-right:24px;
+}
+.channel-name strong{
+    font-size:16px;
+    color:#0f0f0f;
+    display:flex;
+    align-items:center;
+    white-space:nowrap;
+}
+.channel-name strong i{
+    font-size:12px;
+    color:#606060;
+    margin-left:4px;
+}
+.channel-name span{
+    font-size:12px;
+    color:#606060;
+}
+.subscribe-btn{
+    background-color:#0f0f0f;
+    color:#fff;
+    border:none;
+    border-radius:18px;
+    padding:0 16px;
+    height:36px;
+    font-size:14px;
+    font-weight:500;
+    cursor:pointer;
+}
+.subscribe-btn:hover{
+    background-color:#272727;
+}
+/*---Right Group (Like/Share Buttons)---*/
+.action-buttons{
+    display:flex;
+    gap:8px;
+}
+.action-btn{
+    background-color:#0000000d;
+    border-radius:18px;
+    padding:0 16px;
+    height:36px;
+    font-size:14px;
+    font-weight:500;
+    width:auto;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    color:#0f0f0f;
+}
+.action-btn:hover{
+    background-color:#0000001a;
+}
+.action-btn i{
+    font-size:20px;
+}
+.btn-group{
+    /* ADVANCED: Simulates a single split button pill */
+    display:flex;
+    align-items:center;
+    background-color:#0000000d;
+    border-radius:18px;
+    height:36px;
+}
+.btn-group .btn{
+    background-color:transparent;
+    padding:0 16px;
+    font-size:14px;
+    font-weight:500;
+    height:100%;
+    border-radius:0;
+    width:auto;
+    color:#0f0f0f;
+    display:flex;
+    gap:6px;
+}
+.btn-group .btn:hover{
+    background-color:#0000001a;
+}
+.btn-group .btn-group-start{
+    /* ADVANCED: Separator for the split button */
+    border-radius:18px 0 0 18px;
+    border-right:1px solid #0000001a;
+    padding-right:12px;
+}
+.btn-group .btn-group-end{
+    border-radius:0 18px 18px 0;
+    padding-left:12px;
+}
+/*---Video Description Box---*/
+.video-description{
+    background-color:#0000000d;
+    border-radius:12px;
+    padding:12px;
+    margin-top:12px;
+    font-size:14px;
+    line-height:20px;
+    cursor:pointer;
+}
+.video-description:hover{
+    background-color:#0000001a;
+}
+.video-description p{
+    margin-bottom:8px;
+    color:#0f0f0f;
+}
+.video-description p:last-child{
+    margin-bottom:0;
+}
+.views-date{
+    font-weight:700;
+    color:#0f0f0f;
+    margin-right:8px;
+}
+.hashtags{
+    color:#606060;
+}
+.more-link{
+    color:#0f0f0f;
+    text-decoration:none;
+    font-weight:700;
+    cursor:pointer;
+}
+.event-list-container{
+    margin-top: 20px;
+    border-bottom:1px solid #0000001a;
+    padding-bottom:24px;
+}
+/*---Event Tickets Section---*/
+.event-header{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:16px;
+}
+.event-header h3{
+    font-size:16px;
+    font-weight:500;
+    color:#0f0f0f;
+}
+.event-header i{
+    font-size:16px;
+    color:#606060;
+}
+
+/* ADVANCED: Main Flex Container for the entire list (Featured Item on Left, Stacked Items on Right) */
+.event-list-container{
+    display:flex;
+    flex-direction: column;
+    gap:24px; /* Space between the featured event and the secondary events */
+}
+
+/* 1. Featured Event Styling (Left Side) */
+.event-item-main {
+    display: flex;
+    gap: 16px;
+    /* ADVANCED: Width ensures the featured event column stays aligned and doesn't get too wide */
+    width: 35%; 
+    min-width: 250px;
+}
+.event-date{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-radius:4px;
+    width:44px;
+    min-width:44px;
+    height:50px;
+    flex-shrink:0;
+    margin-top: 4px; /* Slight offset to align with text */
+}
+.event-date .month{
+    font-size:10px;
+    font-weight:500;
+    color:#606060;
+    text-transform:uppercase;
+    line-height:1;
+    margin-bottom:2px;
+}
+.event-date .day{
+    font-size:16px;
+    font-weight:400;
+    color:#0f0f0f;
+    line-height:1;
+}
+
+/* Adjustments for the text within the Featured Event */
+.event-details {
+    display:flex;
+    justify-content: space-between;
+    gap: 2px;
+}
+.view-ticket{
+    margin-right: -500px;
+    position: relative;
+    top: 0;
+    right: -300px;
+}
+.event-location-main, .event-time-main {
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0f0f0f;
+}
+.event-location-main {
+    font-weight: 500;
+}
+.event-time-main {
+    color: #606060;
+}
+.bandsintown-main {
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.event-ticket-link {
+    margin-top: 4px;
+}
+
+/* 2. Secondary Events Styling (Right Side) */
+.secondary-events-list {
+    /* ADVANCED: Use Flexbox for vertical stacking */
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* Allows this side to fill remaining space */
+    gap: 16px; /* Spacing between events */
+}
+.event-item{
+    padding: 3px 0px;
+}
+.secondary-events-list .event-item:hover{
+    background-color: lightgray;
+}
+.event-item.side-event {
+    /* ADVANCED: Flex for horizontal alignment of date/details */
+    display: flex;
+    gap: 16px;
+}
+.event-date-side {
+    /* ADVANCED: Styles the date block to just be a vertical text block */
+    min-width: 60px;
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 14px;
+    color: #0f0f0f;
+}
+.event-details-side {
+    /* ADVANCED: Aligns content vertically */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.event-details-side .event-location {
+    font-size: 14px !important;
+    color: #0f0f0f;
+}
+.event-details-side .event-bandsintown {
+    font-size: 12px;
+}
+
+.event-ticket-link, .event-bandsintown{
+    font-size:12px;
+    font-weight:500;
+    color:#065fd4;
+    text-decoration:none;
+    margin-top:2px;
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    text-transform:uppercase;
+}
+.event-ticket-link i,.event-bandsintown i{
+    font-size:14px;
+}
+.show-more-events{
+    background-color:transparent;
+    border:none;
+    color:#0f0f0f;
+    font-size:14px;
+    font-weight:500;
+    padding:8px 0;
+    width:100%;
+    cursor:pointer;
+    margin-top:12px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:8px;
+    border-radius:0;
+}
+.show-more-events:hover{
+    background-color:transparent;
+}
+.show-more-events i{
+    font-size:20px;
+}
+/*---Comments Section---*/
+.comments-section{
+    margin-top:24px;
+}
+.comments-header{
+    display:flex;
+    align-items:center;
+    gap:32px;
+    margin-bottom:24px;
+}
+.comments-header h3{
+    font-size:20px;
+    font-weight:700;
+    color:#0f0f0f;
+}
+.sort-btn{
+    font-size:14px;
+    font-weight:500;
+    color:#0f0f0f;
+    border-radius:0;
+    padding:0;
+    gap:8px;
+    width:auto;
+    height:auto;
+    display:flex;
+    align-items:center;
+}
+.sort-btn i{
+    font-size:24px;
+}
+/*---Add Comment Row---*/
+.add-comment{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    margin-bottom:32px;
+}
+.comment-avatar{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    flex-shrink:0;
+}
+.add-comment input[type="text"]{
+    flex:1;
+    border:none;
+    border-bottom:1px solid #e5e5e5;
+    background-color:transparent;
+    padding:4px 0;
+    font-size:14px;
+    outline:none;
+    margin-top:8px;
+}
+/* ADVANCED: Darker border on focus to indicate active input */
+.add-comment input[type="text"]:focus{
+    border-bottom:2px solid #0f0f0f;
+}
+/*---Comment List---*/
+.comment-list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+.comment{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+}
+.comment-body{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+}
+.comment-author{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    font-size:13px;
+    margin-bottom:2px;
+}
+.comment-author strong{
+    color:#0f0f0f;
+    font-weight:500;
+    text-decoration:none;
+}
+.comment-author .comment-meta{
+    color:#606060;
+    font-size:12px;
+}
+.comment-pin{
+    font-size:12px;
+    color:#606060;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    margin-top:0;
+}
+.comment-pin i{
+    font-size:14px;
+}
+.comment p{
+    font-size:14px;
+    line-height:20px;
+    margin-top:0;
+    color:#0f0f0f;
+}
+.comment-actions{
+    display:flex;
+    align-items:center;
+    gap:0;
+    margin-top:4px;
+}
+.comment-actions .btn{
+    font-size:12px;
+    font-weight:400;
+    color:#0f0f0f;
+    padding:8px;
+    width:32px;
+    height:32px;
+}
+.comment-actions .btn:hover{
+    background-color:#0000000d;
+}
+.comment-actions .btn i{
+    font-size:16px;
+}
+.comment-actions .btn:first-child{
+    width:auto;
+    gap:6px;
+    padding-right:0;
+    border-radius:16px;
+    padding:6px 12px 6px 8px;
+}
+.comment-actions .reply-btn{
+    border-radius:16px;
+    font-weight:500;
+    font-size:12px;
+    width:auto;
+    height:32px;
+    padding:0 12px;
+    margin-left:8px;
+}
+.comment-actions .reply-btn:hover{
+    background-color:#0000000d;
+}
+.reply-toggle{
+    font-size:14px;
+    font-weight:500;
+    color:#065fd4;
+    border-radius:18px;
+    padding:0 16px;
+    height:36px;
+    margin-top:0;
+    width:auto;
+    align-self:flex-start;
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+.reply-toggle:hover{
+    background-color:#def1ff;
+}
+.reply-toggle i{
+    font-size:20px;
+}

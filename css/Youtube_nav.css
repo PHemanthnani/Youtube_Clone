@@ -1,0 +1,231 @@
+/*---Global Reset & Base Styles---*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Roboto","Arial",sans-serif;
+}
+body{
+    /* ADVANCED: Padding to offset the fixed navigation bar */
+    padding-top:56px;
+    background-color:#fff;
+}
+/*---General Button Reset---*/
+.btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:transparent;
+    border:none;
+    cursor:pointer;
+    padding:8px;
+    border-radius:50%;
+    transition:background-color 0.2s;
+    width:40px;
+    height:40px;
+    color:#0f0f0f;
+}
+.btn:hover{
+    background-color:rgba(0,0,0,0.1);
+}
+/*---Navigation Container (Fixed)---*/
+.nav-container{
+    /* ADVANCED: Fixed position for sticky top bar */
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:2000;
+    
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 16px;
+    background-color:#fff;
+    height:56px;
+}
+/*---NavItem1: Logo & Menu---*/
+.nav-item1{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+.nav-item1 .logo-container{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+    color:inherit;
+    padding-right:14px;
+}
+.nav-item1 .logo-wrapper{
+    /* ADVANCED: Relative context for superscript IN badge */
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+#yt-logo-svg{
+    height:20px;
+    width:90px;
+    display:block;
+    cursor:pointer;
+}
+.nav-item1 .logo-wrapper sup{
+    position:absolute;
+    top:-6px;
+    right:-14px;
+    font-size:10px;
+    color:#606060;
+    font-family:"Roboto",Arial,sans-serif;
+}
+/*---NavItem2: Search & Mic---*/
+.nav-item2{
+    display:flex;
+    align-items:center;
+    /* ADVANCED: Flex-grow set to 0, max width of 702px */
+    flex:0 1 702px;
+    margin-left:40px;
+    margin-right:-40px;
+}
+.search-container{
+    display:flex;
+    flex:1;
+    align-items:center;
+    height:40px;
+    border-radius:40px;
+    border:1px solid #ccc;
+    background-color:#fff;
+    box-shadow:inset 0 1px 2px #eee;
+    overflow:hidden;
+    position:relative;
+    margin-left:0;
+}
+.search-container form{
+    flex:1;
+    display:flex;
+    height:100%;
+}
+.yt-searchbox-input{
+    width:100%;
+    height:100%;
+    padding:0 16px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:16px;
+    color:#0f0f0f;
+}
+/* ADVANCED: Styling the input on focus using the parent container's :focus-within pseudo-class */
+.search-container:focus-within .yt-searchbox-input{
+    border-style: outset;
+    border: 1px solid #1c62b9;
+    border-radius: 40px 0px 0px 40px;
+    box-shadow:inset 0 2px 2px #00000020;
+    margin-left:0;
+    padding-left:48px;
+}
+/* ADVANCED: Reveals search icon inside the input when focused */
+.search-container:focus-within .search-icon-on-focus{
+    display:block;
+}
+.search-icon-on-focus{
+    display:none;
+    position:absolute;
+    left:16px;
+    color:#0f0f0f;
+    z-index:10;
+}
+.search-btn{
+    width:64px;
+    height:100%;
+    background-color:#f8f8f8;
+    border:none;
+    border-left:1px solid #ccc;
+    border-radius:0 40px 40px 0;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.search-btn:hover{
+    background-color:#f0f0f0;
+}
+.search-btn svg{
+    width:24px;
+    height:24px;
+    fill:#0f0f0f;
+}
+.mic-btn{
+    background-color:#f8f8f8;
+    min-width:40px;
+    height:40px;
+    border-radius:50%;
+    margin-left:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:none;
+    cursor:pointer;
+}
+.mic-btn:hover{
+    background-color:#d9d9d9;
+}
+/*---NavItem3: Create, Notify, Profile---*/
+.nav-item3{
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    min-width:225px;
+}
+.nav-bt-2{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background-color:#f2f2f2;
+    border:none;
+    border-radius:18px;
+    height:36px;
+    width: 100px;
+    padding:0 12px 0 6px;
+    cursor:pointer;
+    margin-right:8px;
+    transition:background-color 0.2s;
+}
+.nav-bt-2:hover{
+    background-color:#e5e5e5;
+}
+.nav-bt-2 p{
+    font-size:14px;
+    font-weight:570;
+    color:#0f0f0f;
+    /* ADVANCED: Prevents text from wrapping */
+    white-space:nowrap;
+    display:block;
+}
+.bi-plus-lg{
+    font-size: 20px;
+}
+.nav-bt-3{
+    /* ADVANCED: Relative context for notification count badge */
+    position:relative;
+    margin-right:16px;
+}
+.notification{
+    position:absolute;
+    top:2px;
+    right:-2px;
+    background-color:#cc0000;
+    color:#fff;
+    font-size:10px;
+    font-weight:bold;
+    padding:0 4px;
+    border-radius:10px;
+    border:2px solid #fff;
+    line-height:14px;
+}
+.nav-item3 a img{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    cursor:pointer;
+    display:block;
+}
